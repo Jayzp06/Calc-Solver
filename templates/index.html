@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>CalcVision</title>
+</head>
+<body>
+    <h1>CalcVision</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for msg in messages %}
+          <li>{{ msg }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form action="{{ url_for('solve_route') }}" method="post" enctype="multipart/form-data">
+        <p><input type="file" name="image" required></p>
+        <p><input type="submit" value="Solve"></p>
+    </form>
+</body>
+</html>
+
+

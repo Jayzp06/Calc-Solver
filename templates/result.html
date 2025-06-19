@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>CalcVision Result</title>
+</head>
+<body>
+    <h1>Result</h1>
+    <p><strong>OCR Text:</strong> {{ ocr_text }}</p>
+    <h2>Steps</h2>
+    <ol>
+    {% for step in steps %}
+        <li>{{ step }}</li>
+    {% endfor %}
+    </ol>
+    <img src="{{ plot_url }}" alt="Plot"/>
+    <p><a href="{{ url_for('index') }}">Back</a></p>
+</body>
+</html>
+
+
